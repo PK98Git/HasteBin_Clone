@@ -9,21 +9,24 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/base16/solarized-dark.min.css" integrity="sha512-JPpsArcPmVD/lHCCuZeG6Kx4x2qURRXHXxKYaXYJiKEKaoLOcXKDYqQ4jSeauXbk+U6uZ1UzrGO85y+lpys0Og==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<script>hljs.highlightAll();</script>
 	<link rel="stylesheet" href="/styles.css"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/5.0.0/autosize.min.js" integrity="sha512-zibtOTbkMuTivXGk5b8yJFGLIB1jF90NuV7gwNcVWL3xZx/I1HdkXU2pCZhadsuaS5HMUzabvRqK4WmWeKrwUg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<title>Document</title>
+
 </head>
 <body?>
-	<div class="wrapper">
-		<div class="line-numbers">
-			
-			<% for (let i = 1;i<code.split('\n').length;i++){%>
-				<div><%= i %> </div>
-				<%  } %>
+	<form action="/save" method="POST">
+		<div class="wrapper">
+			<div class="line-numbers">
+				&gt;
+			</div>
 		</div>
-	<pre><code id="code-display" class="language-plaintext"><%= code %> </code></pre>
-	</div>
+		<textarea autofocus name="value"><%= locals.value %> </textarea>
+
+
+	</form>
+	<script>
+		autosize(document.querySelector('textarea'));
+	</script>
 </body>
 </html>
 
-//21.40 
-https://www.youtube.com/watch?v=cDNejBxZ0hI
-completed textare but not maching output like the tutor
